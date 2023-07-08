@@ -1,0 +1,45 @@
+import java.util.*;
+/**
+ * The class that implements the methods of the interface Iterator
+ * @author Esad Tök
+ * @version 10.03.2020
+ */
+public class IntBagIterator implements Iterator
+{
+   // Properties
+   private IntBag aBag;
+   private int index;
+   
+   // Constructor
+   public IntBagIterator( IntBag aBag )
+   {
+      this.aBag = aBag;
+      index = 0;
+   }
+   
+   // Methods
+   
+   /**
+    * Checks whether the bag has one more item or not
+    * return true if the bag has more item, false otherwise
+    */
+   public boolean hasNext()
+   {
+      if ( index < (aBag.size() - 1) )
+      {
+         return true;
+      }
+      return false;
+   }
+   
+   public Integer next()
+   {
+      if (hasNext())
+      {
+         index++;
+         return aBag.getValue(index - 1);
+      }
+      return null;
+   }
+   
+}

@@ -1,0 +1,15 @@
+/**
+ * Aproper class to implement the method of the ActionListener interface
+ */
+public class MyOtherTFActionListener implements ActionListener
+{
+   /**
+    * @Override
+    * 
+    */
+   @Override
+   public void actionPerformed( ActionEvent evt )
+   {
+      
+   }
+}

@@ -1,0 +1,64 @@
+package hangmangame.extras;
+
+import cs102.hangman.*;
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+/**
+ * Collection of UI components to form a complete Hangman game. 
+ * View components implement IHangmanView, so they can automatically update
+ * whenever the hangmanModel associated with changes, changes.
+ * Other components are hangman controllers that update the model.
+ * @author Esad Tök
+ * @version 11.04.2020
+ */
+public class HangmanGUIPanel extends JPanel 
+{
+   
+   // Properties
+   HangmanModel hm;
+   TextFieldControlPanel tfControl;
+   NewGameButtonControl button;
+   LabelsHangmanView labels;
+   GallowsHangmanView gallows;
+   HangmanLetterButtonControls controls;
+   
+   // Constructor
+   public HangmanGUIPanel( HangmanModel hm) 
+   {
+      this.hm = hm;
+      
+      // Component implementation
+      tfControl = new TextFieldControlPanel( hm );
+      button = new NewGameButtonControl( hm );
+      labels = new LabelsHangmanView();
+      gallows = new GallowsHangmanView();
+      controls = new HangmanLetterButtonControls( "abcdefghijklmnopqrstuvwxyz", 13, 2 );
+      
+      
+      hm.addView( labels ); // Adding the labels to hangman model as a view
+      hm.addView( gallows ); // Adding the gallows to hangman model as a view
+      hm.addView( button ); // Adding the restart button to hangman model as a view
+      hm.addView( controls ); // Adding the control buttons to hangman model as a view
+      
+      // Panel implementation
+      setPreferredSize( new Dimension( 700, 440) );
+      setLayout( new BorderLayout() );
+      
+      // Adding an action listener to control buttonns
+      controls.addActionListener( new HangmanLetterButtonsController( hm ) );
+      
+      // Adding components
+      this.add( tfControl, BorderLayout.NORTH );
+      this.add( button, BorderLayout.SOUTH );
+      this.add( labels, BorderLayout.WEST );
+      this.add( gallows, BorderLayout.CENTER );
+      this.add( controls, BorderLayout.EAST );
+   }
+   
+   
+   // Methods
+   
+}

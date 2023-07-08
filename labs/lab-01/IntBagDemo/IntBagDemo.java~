@@ -1,0 +1,52 @@
+import java.util.*;
+/**
+ * Demonstration program for IntBag class
+ * @author Esad Tök
+ * @version 15.02.2020
+ */
+public class IntBagDemo
+{
+   public static void main( String[] args )
+   {
+      Scanner scan = new Scanner(System.in);
+      
+      // Constants
+      
+      // Variables
+      IntBag bag;
+      int input;
+      int number;
+      
+      // Program Codes
+      
+      do 
+      {
+         System.out.println( "1) Create a new list\n2) Read set of values\n3) Print the collection\n4) Add value to a location" );
+         System.out.println( "5) Remove value\n6) Read a single test value\n7) Compute the locations of the test value\n 8) Print tle locations of the test value\n 9) Quit" );
+         input = scan.nextInt();
+         if ( input == 1 )
+         {
+            System.out.println( "Enter the maximum capacity: " );
+            bag = new IntBag(scan.nextInt());
+         }
+         else if ( input == 2 )
+         {
+            System.out.println( "Enter the values into the collection" );
+            number = scan.nextInt();
+            while ( number >= 0 )
+            {
+               bag.add( number )
+            }
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+      } while( input != 9 );
+      
+   }
+}

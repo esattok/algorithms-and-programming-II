@@ -1,0 +1,159 @@
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+/**
+ * A Potluck game made via GUI
+ * @author Esad İsmail Tök
+ * @version 31.03.2020
+ */
+public class PotLuck extends JFrame
+{
+   
+   // Properties
+   private final int GRID_X = 5;
+   private final int GRID_Y = 5;
+   private JPanel pnl;
+   private JButton[] buttons;
+   private JButton selectedButton;
+   private JTextField txt;
+   private int count;
+   
+   
+   // Constructor
+   public PotLuck()
+   {
+      count = 0;
+      
+      this.setDefaultCloseOperation( DISPOSE_ON_CLOSE );
+      
+      pnl = new JPanel( new GridLayout( GRID_X, GRID_Y ) ); // Panel object with grid layout ( 5, 5 )
+      
+      // Instantiating button obbjects
+      buttons = new JButton[25];
+      for ( int i = 0; i < 25; i++ )
+      {
+         buttons[i] = new JButton( "Button " + (i + 1) );
+         pnl.add( buttons[i] ); // Adding buttons into the panel
+         buttons[i].addActionListener( new BtnListener() ); // Adding event listener to all buttons
+      }
+      
+      this.randomSelect(); // Calling the method to select a random button
+      
+      // Setting Text Field
+      txt = new JTextField( 20 );
+      txt.setEditable( false );
+      
+      // Adding panel and other components into the frame
+      this.setLayout( new BorderLayout() );
+      this.add( txt, BorderLayout.NORTH );
+      this.add( pnl, BorderLayout.CENTER );
+      this.setTitle( "Pot Luck Game" );
+      this.setBounds( 650, 300, 400, 250 );
+      pnl.setBackground( Color.black );
+      this.setVisible( true );
+   }
+   
+   // Methods
+   /**
+    * Assigns a random button in the array to the selected button property
+    */
+   public void randomSelect()
+   {
+      // Variables
+      Random number;
+      
+      // Program Codes
+      number = new Random();
+      selectedButton = buttons[ number.nextInt(25) ];
+   }
+   
+   
+   
+   
+   /**
+    * A named inner class to implement the method of the ActionListener interface
+    */
+   public class BtnListener implements ActionListener
+   {
+      
+      /**
+       * @Override
+       * If the user presses the prize button he/she wins
+       * @param evt event for the event handler
+       */
+      @Override
+      public void actionPerformed( ActionEvent evt )
+      {
+         JButton b;
+         b = (JButton)evt.getSource();
+         
+         if ( evt.getSource() != selectedButton )
+         {
+            count++;
+            b.setEnabled(false); // Making a button unselectable after it is pressed
+         }
+         else
+         {
+            count++;
+            txt.setText( "You got it in " + count + " attempts!" );
+            
+            // Making buttons unselectable
+            for ( int i = 0; i < 25; i++ )
+            {
+               buttons[i].setEnabled( false );
+            }
+            
+            // Asking user to play again or quit
+            JFrame temp = new JFrame();
+            JButton btn1 = new JButton( "Play Again" );
+            JButton btn2 = new JButton( "Quit" );
+            
+            temp.setLayout( new FlowLayout() );
+            temp.add( new JLabel( "Well Done" ) );
+            temp.add( btn1 );
+            temp.add( btn2 );
+            temp.setTitle( "Info Window" );
+            temp.setBounds( 700, 400, 300, 75 );
+            temp.setVisible( true );
+            
+            // Adding Listeners to informationn window buttons
+            btn1.addActionListener( new ActionListener() {
+               /**
+                * @Override
+                * Information window disappears, buttons become selectable, new prize button is generated, and game starts again
+                * @param e event for the event handler
+                */
+               @Override
+               public void actionPerformed( ActionEvent e )
+               {
+                  temp.dispose();
+                  count = 0;
+                  txt.setText("");
+                  
+                  // Making buttons selectable again
+                  for ( int i = 0; i < 25; i++ )
+                  {
+                     buttons[i].setEnabled( true );
+                  }
+                  
+                  randomSelect(); // Deciding another random button
+               }
+            });
+            
+            btn2.addActionListener( new ActionListener() {
+               /**
+                * @Override
+                * Quit program
+                * @param e event for the event handler
+                */
+               @Override
+               public void actionPerformed( ActionEvent e )
+               {
+                  System.exit(0);
+               }
+            });
+         }
+      }
+   }
+}

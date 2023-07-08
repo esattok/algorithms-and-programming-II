@@ -1,0 +1,37 @@
+package application;
+
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+/**
+ * Application class for the baloons game
+ * @author Esat Tök
+ * @version 04.04.2020
+ */
+public class Lab04b
+{
+   public static void main( String[] args )
+   {
+      Scanner scan = new Scanner( System.in );
+      
+      // Constants
+      
+      
+      
+      // Variables
+      JFrame game;
+      
+      
+      
+      // Program Codes
+      
+      game = new JFrame();
+      game.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+      game.add( new BalloonsGamePanel() );
+      game.setTitle( "Lab04b - Baloons" );
+      game.setBounds( 600, 250, 500, 450 );
+      game.setVisible( true );
+      
+   }
+}

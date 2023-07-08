@@ -1,0 +1,73 @@
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
+/** 
+ * Simple gui exercise program
+ * @author Esad İsmail Tök
+ * @version 31.03.2020
+ */  
+public class MyDrawingPanel extends JPanel
+{
+   // Properties
+   
+   
+   
+   // Constructor
+   public MyDrawingPanel()
+   {
+      this.setSize( 300, 250 );
+      this.setBackground( Color.YELLOW );
+      this.setVisible(true);
+   }
+   
+   /**
+    * Second constructor that enables user to decide the size of the panel
+    * @param width width of the panel
+    * @param height height of the panel
+    */
+   public MyDrawingPanel(int width, int height)
+   {
+      this.setSize( width, height );
+      this.setBackground( Color.YELLOW );
+      this.setVisible(true);
+   }
+   
+   
+   // Methods
+   public void setColor( Color clr )
+   {
+      this.setBackground( clr );
+   }
+   
+   /**
+    * Mainn method for the calss
+    */
+   public static void main(String[] args)
+   {
+      // Variables
+      JFrame f;
+      MyDrawingPanel p;
+      MyDrawingPanel p2;
+      MyDrawingPanel p3;
+      
+      // Program Codes
+      f = new JFrame();
+      p = new MyDrawingPanel();
+      p2 = new MyDrawingPanel(200, 100);
+      p3 = new MyDrawingPanel(100, 100);
+      p.setSize(  300, 250 );
+      p2.setSize(  300, 250 );
+      f.setLayout( new GridLayout() );
+      f.setTitle( "Color Test" );
+      f.setSize( 750, 500);
+      f.setVisible(true);
+      f.add( p2 );
+      f.add( p );
+      p2.setColor(Color.BLACK);
+      p.setColor(Color.BLUE);
+      f.add( p3 );
+      p3.setColor(Color.white);
+      p3.setSize(  100, 100 );
+      f.pack();  
+   }
+}

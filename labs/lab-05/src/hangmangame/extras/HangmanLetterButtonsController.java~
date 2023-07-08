@@ -1,0 +1,31 @@
+package hangmangame.extras;
+
+import java.util.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.border.*;
+import cs102.hangman.*;
+
+/**
+ * A proper class to implement ActionListener interfece
+ * @author Esad Tök
+ * @version 11.04.2020
+ */
+public class HangmanLetterButtonsController implements ActionListener
+{
+   
+   /**
+    * 
+    * @param evt action event
+    */
+   @Override
+   public void actionPerformed( ActionEvent evt )
+   {
+      
+      
+      
+   }
+   
+   
+}

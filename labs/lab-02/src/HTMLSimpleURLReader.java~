@@ -1,0 +1,17 @@
+/* 
+ * Mohamed Wasim Mohamed Akram 
+ * 02/02/2020 
+ * This is the print part (c) 
+ */ 
+import cs1.SimpleURLReader; 
+public class HTMLFilteredReader extends MySimpleURLReader 
+{ 
+  public HTMLSimpleURLReader(String url) 
+  { 
+    super(url); 
+  } 
+  public String getPageContents(String url) 
+  { 
+    return super.getPageContents(); 
+  } 
+}

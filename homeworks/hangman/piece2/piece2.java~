@@ -1,0 +1,27 @@
+/** 
+ * This is the constructor of HangMan object. 
+ * @author Berke UÁar, Mert Bark˝n Er, Efe Beydoan, Arda ÷nal, Mehmet Alper «etin 
+ * @version 12/02/2020 
+ */ 
+public Hangman() 
+{ 
+   allLetters = new StringBuffer( 26); 
+ 
+   for ( char letter = 'a'; letter <= 'z'; letter++) 
+   { 
+      allLetter.append( letter); 
+ 
+   } 
+ 
+   maxAllowedIncorrectTries = 6; 
+   numberOfIncorrectTries = 0; 
+   usedletters = new StringBuffer(); 
+   secretWord = new StringBuffer( chooseSecretWord()); 
+   knownSoFar = new StringBuffer( secretWord.length()); 
+    
+   for ( int i = 0; i < secretWord.length(); i++) 
+   { 
+      knownSoFar.append( "*"); 
+   } 
+ 
+}

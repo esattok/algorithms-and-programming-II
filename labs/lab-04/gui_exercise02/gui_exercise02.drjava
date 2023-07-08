@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" build="classes/" root="" work="src/">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="src/MyDrawingPanel.java" package="" timestamp="31-Mar-2020 20:02:41">
+        <select from="2140" to="2140"/>
+        <scroll column="872" row="0"/>
+      </file>
+      <file name="src/GUIDemo1.java" package="" timestamp="31-Mar-2020 16:52:10">
+        <select from="2140" to="2140"/>
+        <scroll column="872" row="0"/>
+      </file>
+      <file name="src/MyOtherActionListener.java" package="" timestamp="31-Mar-2020 17:14:21">
+        <select from="2140" to="2140"/>
+        <scroll column="872" row="0"/>
+      </file>
+      <file name="src/MyFrame.java" package="" timestamp="31-Mar-2020 17:15:46">
+        <select from="2140" to="2140"/>
+        <scroll column="872" row="0"/>
+      </file>
+      <file name="src/MyPanel.java" package="" timestamp="31-Mar-2020 17:24:56">
+        <select from="2140" to="2140"/>
+        <scroll column="872" row="0"/>
+      </file>
+      <file name="src/MyOtherTFActionListener.java" package="" timestamp="31-Mar-2020 17:27:39">
+        <select from="2140" to="2140"/>
+        <scroll column="872" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

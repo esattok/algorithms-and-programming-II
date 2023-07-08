@@ -1,0 +1,94 @@
+/**
+ * The class Rectangle that inherits from the class Shape
+ * @author Esad Tök
+ * @version 09.03.2020
+ */
+public class Rectangle extends Shape implements Selectable
+{
+   // Properties
+   private int width;
+   private int height;
+   private boolean selected;
+   
+   // Constructor
+   public Rectangle( int width, int height, int x, int y )
+   {
+      this.width = width;
+      this.height = height;
+      setLocation(x, y);
+   }
+   
+   // Methods
+   /**
+    * @Override
+    * Gets the area of the rectangle
+    * @return the area
+    */
+   @Override
+   public double getArea()
+   {
+      // Variable
+      double area;
+      
+      // Program Code
+      area = (this.width * this.height);
+      return area;
+   }
+   
+   /**
+    * Gets whether the shape is selected or not
+    * @return true if the shape is selected
+    */
+   public boolean getSelected()
+   {
+      return this.selected;
+   }
+   
+   /**
+    * Sets the selected to a new boolean
+    * @param choice new boolean
+    */
+   public void setSelected(boolean choice)
+   {
+      this.selected = choice;
+   }
+   
+   /**
+    * Checkes whether the rectangle has the given coordinates in it
+    * @param x, y the coordinates to look
+    * @return true if the rectangle has the coordinates
+    */
+   public boolean contains(int x, int y) 
+   {
+      if ( (getX() <= x) && (x <= getX() + width) && (getY() <= y) && (y <= getY() + height) ) 
+      {
+         return true;
+      }
+      return false;
+   }
+   
+   /**
+    * @Override
+    * Gets info of the Rectangle object
+    * @return info
+    */
+   @Override
+   public String info()
+   {
+      // Variable 
+      String str;
+      
+      // Program Code
+      if ( selected )
+      {
+         str = "selected";
+      }
+      else
+      {
+         str = "not selected";
+      }
+      return "The rectangle with the ( " + getX() + ", " + getY() + " ) coordinate has the width of " + this.width + ", the height of " + this.height + ", and the area of " + this.getArea() + "and is " + str;
+   }
+   
+   
+}

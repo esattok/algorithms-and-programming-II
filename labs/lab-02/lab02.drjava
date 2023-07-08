@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" build="classes/" root="" work="src/">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="src/lab02a.java" package="" timestamp="04-Mar-2020 12:02:44">
+        <select from="224" to="1073"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="src/theMenu.java" package="" timestamp="04-Mar-2020 10:25:29">
+        <select from="224" to="1073"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="src/MySimpleURLReader.java" package="" timestamp="04-Mar-2020 11:32:18">
+        <select from="224" to="1073"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="src/XHTMLFilteredReader.java" package="" timestamp="04-Mar-2020 11:38:32">
+        <select from="224" to="1073"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="src/HTMLFilteredReader.java" package="" timestamp="04-Mar-2020 11:54:45">
+        <select from="224" to="1073"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath>
+      <file absolute="true" name="/Users/esattok/Desktop/cs1.jar"/>
+    </classpath>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
